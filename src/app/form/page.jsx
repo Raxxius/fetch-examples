@@ -1,6 +1,5 @@
-import { google } from "googleapis"
-import { use } from "react"
-
+import { google } from "googleapis";
+import { use } from "react";
 
 /**
  * 1# get google sheet data
@@ -9,37 +8,26 @@ import { use } from "react"
  * convert form data into
  **/
 
-// Basic fetch via Apps Script html URL returns parsed JSON
-async function fetchAppsScript() {
-  console.log("Fetching Apps Script Data");
-
-  const response = await fetch(
-    "https://script.google.com/macros/s/AKfycbxqIxEcRyUMk-w881TNYXARgbwR1NE7az3CtO8p7B6nTtljCMML5MM6fsUlFwVU6NVs/exec"
-  );
-
-  const data = await response.json();
-
-  return {
-    data,
-  };
-}
-
-
-// Raw fetch, returns column list, little weirdly setup and a bit broken, but all data is returned 
+// Raw fetch, returns column list, all data is returned
 async function fetchSheetsDirect() {
-  console.log("Fetching direct sheet");
-
   const response = await fetch(
-    `https://docs.google.com/spreadsheets/d/1LelBXE4U50QU5dyfk5eYLNEP1Ve5_qiglMcEaLzUwQg/gviz/tq?sheet=Form2`
+    "https://docs.google.com/spreadsheets/d/1xAY6jBd5cJPIF3UfnsDveUZL-f_qNShGb3WFQItq-vw/gviz/tq?sheet=sheet1"
   );
 
   const data = await response.text();
   const dataParsed = JSON.parse(data.substring(47).slice(0, -2));
-  const returnValue = dataParsed.table;
+  const returnValue = dataParsed;
+  return returnValue;
+}
 
-  return {
-    returnValue,
-  };
+// Basic fetch via Apps Script html URL returns parsed JSON
+async function fetchAppsScript() {
+  const response = await fetch(
+    "https://script.google.com/macros/s/AKfycbxSJDTFAKp0fRe5ICs18LiSuSD2FGQeeH_nykj7MuAM5Rk9ThCzWMgfhSHaPR0nQoQgJA/exec"
+  );
+
+  const data = await response.json();
+  return data;
 }
 
 // Get sheetfunction with auth and scopes provides an array of arrays = best to work with
@@ -68,20 +56,62 @@ async function getSheet() {
   return data;
 }
 
-
 export default function Form() {
-  const sheetData = use(fetchAppsScript());
+  //directFetch
+  const directFetchData = [];
+  const directFetchSheetData = use(fetchSheetsDirect());
+  const rowData = directFetchSheetData.table.rows.slice(1);
+  for (const row in rowData) {
+    let newArray = rowData[row];
+    let pushArray = [];
+    newArray.c.map((value) => {
+      pushArray.push(value.v);
+    });
+    directFetchData.push(pushArray);
+  }
 
-  console.log(sheetData)
+  const directFetch = directFetchData.map((data) => {
+    return (
+      <div className="wrapper" key={`direct${data}`}>
+        <div className="title">{data[0]}</div>
+        <div className="result">
+          {data[1]}
+          <span className="sub-result">
+            <i> {data[2]}</i>
+          </span>
+        </div>
+      </div>
+    );
+  });
 
+  //AppsScript
+
+  const appsScriptData = use(fetchAppsScript());
+  console.log(appsScriptData);
+  const appsFetch = appsScriptData.map((data) => {
+    return (
+      <div className="wrapper" key={`apps${data}`}>
+        <div className="title">{data[0]}</div>
+        <div className="result">
+          {data[1]}
+          <span className="sub-result">
+            <i> {data[2]}</i>
+          </span>
+        </div>
+      </div>
+    );
+  });
 
   return (
-    <div className='container'>
-      <div>
-        <p>Test</p>
-        {sheetData.data.intro}
+    <div className="container">
+      <div className="direct-fetch">
+        <h2>Direct fetch</h2>
+        {directFetch}
       </div>
-      <p>Test2</p>
+      <div className="apps-script">
+        <h2>Apps Script</h2>
+        {appsFetch}
+      </div>
     </div>
   );
 }
