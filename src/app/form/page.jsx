@@ -30,8 +30,8 @@ async function fetchAppsScript() {
   return data;
 }
 
-// Get sheetfunction with auth and scopes provides an array of arrays = best to work with
-async function getSheet() {
+// Get sheet function with auth and scopes provides an array of arrays
+async function fetchGoogleAPI() {
   const auth = await google.auth.getClient({
     scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
   });
@@ -39,21 +39,17 @@ async function getSheet() {
   const sheets = google.sheets({ version: "v4", auth });
 
   // Query
-
-  const range = `Form2`;
-
+  const range = `page1`;
   const response = await sheets.spreadsheets.values.get({
-    spreadsheetId: "1LelBXE4U50QU5dyfk5eYLNEP1Ve5_qiglMcEaLzUwQg",
+    spreadsheetId: "1xAY6jBd5cJPIF3UfnsDveUZL-f_qNShGb3WFQItq-vw",
     range,
   });
 
   // Result
-
   const data = response.data;
+  const returnValue = data.values
 
-  console.log(data);
-
-  return data;
+  return returnValue;
 }
 
 export default function Form() {
@@ -87,8 +83,8 @@ export default function Form() {
   //AppsScript
 
   const appsScriptData = use(fetchAppsScript());
-  console.log(appsScriptData);
-  const appsFetch = appsScriptData.map((data) => {
+  const appsRowData = appsScriptData.slice(1);
+  const appsFetch = appsRowData.map((data) => {
     return (
       <div className="wrapper" key={`apps${data}`}>
         <div className="title">{data[0]}</div>
@@ -102,6 +98,26 @@ export default function Form() {
     );
   });
 
+
+  //GoogleApi
+
+  const googleApiData = use(fetchGoogleAPI())
+  const apiRowData = googleApiData.slice(1);
+  const apiFetch = apiRowData.map((data) => {
+    return (
+      <div className="wrapper" key={`apps${data}`}>
+        <div className="title">{data[0]}</div>
+        <div className="result">
+          {data[1]}
+          <span className="sub-result">
+            <i> {data[2]}</i>
+          </span>
+        </div>
+      </div>
+    );
+  });
+  
+
   return (
     <div className="container">
       <div className="direct-fetch">
@@ -112,6 +128,10 @@ export default function Form() {
         <h2>Apps Script</h2>
         {appsFetch}
       </div>
+      <dic className="api">
+        <h2>API Call</h2>
+        {apiFetch}
+      </dic>
     </div>
   );
 }
