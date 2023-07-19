@@ -122,6 +122,19 @@ body {
   margin-right: auto;
 }
 
+.inline-link {
+  color: #181c21;
+}
+
+.inline-link:hover {
+  color: rgb(206, 113, 0);
+}
+
+.inline-link:active {
+  color: #434e5d;
+}
+
+
 @media only screen and (min-width: 766px) {
   .container {
     display: grid;
