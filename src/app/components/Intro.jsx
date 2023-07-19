@@ -11,19 +11,19 @@ export default function Intro() {
       <p className="text">For this test Google sheets is used</p>
       <div className="button-box">
         <a
-          className="secondary"
+          className="secondary link"
           href="https://docs.google.com/spreadsheets/d/1xAY6jBd5cJPIF3UfnsDveUZL-f_qNShGb3WFQItq-vw/edit#gid=0"
           target="_blank"
         >
           View Google Sheet <Sheets />
         </a>
-        <a href="" className="secondary">
+        <a href="" className="secondary link">
           See the source code <Github />
         </a>
       </div>
       <a
         href="https://keith-blackwood.com/blog/1qi7iNMQx5bN3AAVfHVA5un3M82xLMv_VNFtUcvlIQ9E"
-        className="secondary"
+        className="secondary blog-link"
         target="_blank"
       >
         View the blog article

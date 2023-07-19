@@ -79,8 +79,8 @@ body {
 
 .button-box {
   display: flex;
-  max-width: 600px;
-  justify-content: space-around;
+  max-width: 500px;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2em;
@@ -88,8 +88,6 @@ body {
 }
 
 .intro a {
-  padding: 0.5em;
-  margin: 0.25em;
   border: none;
   border-radius: 5px;
   font-size: 1.1rem;
@@ -110,6 +108,18 @@ body {
 .icon {
   height: 1.5rem;
   margin-left: 0.5em;
+}
+
+.link {
+  padding: 0.5em;
+}
+
+.blog-link {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media only screen and (min-width: 766px) {
