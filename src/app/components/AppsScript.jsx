@@ -11,7 +11,7 @@ export default function AppsScript() {
   });
 
   return (
-    <div className="apps-script">
+    <div className="apps-script primary">
       <h2>Apps Script</h2>
       {appsFetch}
     </div>

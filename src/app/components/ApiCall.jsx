@@ -11,7 +11,7 @@ export default function ApiCall() {
   });
 
   return (
-    <div className="api">
+    <div className="api primary">
       <h2>API Call</h2>
       {apiFetch}
     </div>
