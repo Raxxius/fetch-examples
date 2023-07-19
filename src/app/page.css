@@ -4,9 +4,56 @@
 }
 
 body {
-  background-color: #e5e5f7;
+  background-color: #e2eaf3;
   opacity: 0.8;
-  background-image:  linear-gradient(30deg, #444cf7 12%, transparent 12.5%, transparent 87%, #444cf7 87.5%, #444cf7), linear-gradient(150deg, #444cf7 12%, transparent 12.5%, transparent 87%, #444cf7 87.5%, #444cf7), linear-gradient(30deg, #444cf7 12%, transparent 12.5%, transparent 87%, #444cf7 87.5%, #444cf7), linear-gradient(150deg, #444cf7 12%, transparent 12.5%, transparent 87%, #444cf7 87.5%, #444cf7), linear-gradient(60deg, #444cf777 25%, transparent 25.5%, transparent 75%, #444cf777 75%, #444cf777), linear-gradient(60deg, #444cf777 25%, transparent 25.5%, transparent 75%, #444cf777 75%, #444cf777);
+  background-image: linear-gradient(
+      30deg,
+      #b7cbe1 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #b7cbe1 87.5%,
+      #b7cbe1
+    ),
+    linear-gradient(
+      150deg,
+      #b7cbe1 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #b7cbe1 87.5%,
+      #b7cbe1
+    ),
+    linear-gradient(
+      30deg,
+      #b7cbe1 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #b7cbe1 87.5%,
+      #b7cbe1
+    ),
+    linear-gradient(
+      150deg,
+      #b7cbe1 12%,
+      transparent 12.5%,
+      transparent 87%,
+      #b7cbe1 87.5%,
+      #b7cbe1
+    ),
+    linear-gradient(
+      60deg,
+      #9AB7D5 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #9AB7D5 75%,
+      #9AB7D5
+    ),
+    linear-gradient(
+      60deg,
+      #9AB7D5 25%,
+      transparent 25.5%,
+      transparent 75%,
+      #9AB7D5 75%,
+      #9AB7D5
+    );
   background-size: 200px 350px;
   background-position: 0 0, 0 0, 100px 180px, 100px 180px, 0 0, 100px 180px;
 }
