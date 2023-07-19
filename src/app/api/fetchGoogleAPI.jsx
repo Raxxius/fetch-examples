@@ -4,6 +4,11 @@ import { google } from "googleapis";
 export default async function fetchGoogleAPI() {
     const auth = await google.auth.getClient({
       scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
+      projectId: process.env.GOOGLE_PROJECTID,
+      credentials: {
+        private_key: privateKey,
+        client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      },
     });
   
     const sheets = google.sheets({ version: "v4", auth });
