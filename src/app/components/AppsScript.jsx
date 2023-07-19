@@ -23,6 +23,7 @@ export default function AppsScript() {
           Google Apps Script
         </a>
       </p>
+      <p>See the blog for relevant code</p>
       {appsFetch}
     </div>
   );
