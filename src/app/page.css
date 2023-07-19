@@ -4,8 +4,9 @@
 }
 
 body {
+  font-family: "Noto Serif", serif;
+  font-family: "Open Sans", sans-serif;
   background-color: #e2eaf3;
-  opacity: 0.8;
   background-image: linear-gradient(
       30deg,
       #b7cbe1 12%,
@@ -40,22 +41,75 @@ body {
     ),
     linear-gradient(
       60deg,
-      #9AB7D5 25%,
+      #9ab7d5 25%,
       transparent 25.5%,
       transparent 75%,
-      #9AB7D5 75%,
-      #9AB7D5
+      #9ab7d5 75%,
+      #9ab7d5
     ),
     linear-gradient(
       60deg,
-      #9AB7D5 25%,
+      #9ab7d5 25%,
       transparent 25.5%,
       transparent 75%,
-      #9AB7D5 75%,
-      #9AB7D5
+      #9ab7d5 75%,
+      #9ab7d5
     );
   background-size: 200px 350px;
   background-position: 0 0, 0 0, 100px 180px, 100px 180px, 0 0, 100px 180px;
+}
+
+.primary {
+  background: #e2eaf3;
+  padding: 1.5em;
+}
+
+.secondary {
+  background-color: #c7ddf3;
+}
+
+.intro h1 {
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
+.intro p {
+  font-size: 1.2rem;
+}
+
+.button-box {
+  display: flex;
+  max-width: 600px;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.intro a {
+  padding: 0.5em;
+  margin: 0.25em;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.intro a:hover {
+  background-color: #b2c4d8;
+}
+
+.intro a:active {
+  background-color: #9ab7d5;
+}
+
+.icon {
+  height: 1.5rem;
+  margin-left: 0.5em;
 }
 
 @media only screen and (min-width: 766px) {

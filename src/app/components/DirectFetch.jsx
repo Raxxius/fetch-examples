@@ -21,7 +21,7 @@ export default function DirectFetch() {
   });
 
   return (
-    <div className="direct-fetch">
+    <div className="direct-fetch primary">
       <h2>Direct fetch</h2>
       {directFetch}
     </div>
