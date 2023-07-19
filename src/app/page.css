@@ -87,7 +87,7 @@ body {
   margin-bottom: 2em;
 }
 
-.intro button {
+.intro a {
   padding: 0.5em;
   margin: 0.25em;
   border: none;
@@ -96,13 +96,14 @@ body {
   text-align: center;
   display: flex;
   justify-content: center;
+  text-decoration: none;
 }
 
-.intro button:hover {
+.intro a:hover {
   background-color: #b2c4d8;
 }
 
-.intro button:active {
+.intro a:active {
   background-color: #9ab7d5;
 }
 

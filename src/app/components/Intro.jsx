@@ -10,17 +10,24 @@ export default function Intro() {
       </p>
       <p className="text">For this test Google sheets is used</p>
       <div className="button-box">
-        <button
+        <a
           className="secondary"
           href="https://docs.google.com/spreadsheets/d/1xAY6jBd5cJPIF3UfnsDveUZL-f_qNShGb3WFQItq-vw/edit#gid=0"
           target="_blank"
         >
           View Google Sheet <Sheets />
-        </button>
-        <button href="" className="secondary">
+        </a>
+        <a href="" className="secondary">
           See the source code <Github />
-        </button>
+        </a>
       </div>
+      <a
+        href="https://keith-blackwood.com/blog/1qi7iNMQx5bN3AAVfHVA5un3M82xLMv_VNFtUcvlIQ9E"
+        className="secondary"
+        target="_blank"
+      >
+        View the blog article
+      </a>
     </div>
   );
 }
