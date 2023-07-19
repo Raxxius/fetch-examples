@@ -6,7 +6,7 @@ export default async function fetchGoogleAPI() {
       scopes: ["https://www.googleapis.com/auth/spreadsheets.readonly"],
       projectId: process.env.GOOGLE_PROJECTID,
       credentials: {
-        private_key: privateKey,
+        private_key: process.env.GOOGLE_PRIVATE_KEY,
         client_email: process.env.GOOGLE_CLIENT_EMAIL,
       },
     });
