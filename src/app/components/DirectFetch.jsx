@@ -23,6 +23,16 @@ export default function DirectFetch() {
   return (
     <div className="direct-fetch primary">
       <h2>Direct fetch</h2>
+      <p>
+        This data has been fetched via a{" "}
+        <a
+          href="https://developers.google.com/chart/interactive/docs/querylanguage"
+          className="inline-link"
+          target="_blank"
+        >
+          Google Visualisation Query
+        </a>
+      </p>
       {directFetch}
     </div>
   );
