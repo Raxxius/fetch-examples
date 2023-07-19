@@ -13,7 +13,7 @@ export default function AppsScript() {
   return (
     <div className="apps-script primary">
       <h2 className="fetch-title">Apps Script</h2>
-      <p>
+      <p className="main-text">
         This data has been fetched via the{" "}
         <a
           href="https://www.google.com/script/start/"
@@ -22,8 +22,8 @@ export default function AppsScript() {
         >
           Google Apps Script
         </a>
+        {" "}See the blog for relevant code
       </p>
-      <p>See the blog for relevant code</p>
       {appsFetch}
     </div>
   );

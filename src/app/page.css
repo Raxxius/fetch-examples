@@ -134,6 +134,25 @@ body {
   color: #434e5d;
 }
 
+h2 {
+  text-align: center;
+}
+
+.main-text {
+  padding: 1em;
+}
+
+.wrapper {
+  padding-left: 2em;
+}
+
+.title {
+  font-weight: 600;
+}
+
+.result {
+  padding: 0.5em;
+}
 
 @media only screen and (min-width: 766px) {
   .container {

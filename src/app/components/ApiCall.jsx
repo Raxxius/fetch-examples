@@ -13,7 +13,7 @@ export default function ApiCall() {
   return (
     <div className="api primary">
       <h2>API Call</h2>
-      <p>
+      <p className="main-text">
         This data has been fetched by the{" "}
         <a
           href="https://www.npmjs.com/package/googleapis"
