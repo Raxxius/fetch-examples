@@ -1,5 +1,3 @@
-"use client"
-
 import fetchGoogleAPI from "../api/fetchGoogleAPI";
 import DataWrapper from "../hooks/dataWrapper";
 import { use } from "react";
